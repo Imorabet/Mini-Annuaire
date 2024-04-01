@@ -1,0 +1,3 @@
+com\example\web\controller\getAllDepartements.class
+com\example\web\dao\DepartementDao.class
+com\example\web\model\Departement.class
