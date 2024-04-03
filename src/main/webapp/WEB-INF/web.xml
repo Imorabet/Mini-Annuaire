@@ -40,6 +40,12 @@
   	<description></description>
   	<servlet-class>com.example.web.controller.insertEtudiant</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>rechercheEtudiant</servlet-name>
+  	<display-name>rechercheEtudiant</display-name>
+  	<description></description>
+  	<servlet-class>com.example.web.controller.rechercheEtudiant</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>getAllDepartements</servlet-name>
   	<url-pattern>/getAllDepartements</url-pattern>
@@ -63,6 +69,10 @@
   <servlet-mapping>
   	<servlet-name>insertEtudiant</servlet-name>
   	<url-pattern>/insertEtudiant</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rechercheEtudiant</servlet-name>
+  	<url-pattern>/rechercheEtudiant</url-pattern>
   </servlet-mapping>
   
 </web-app>

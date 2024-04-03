@@ -80,9 +80,6 @@
         </svg>
 					</a>
 				</div>
-
-
-
 				<table
 					class="table table-body-tertiary table-hover table-responsive my-4">
 					<thead class="table-dark">
