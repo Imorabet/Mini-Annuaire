@@ -50,7 +50,7 @@
 							data-bs-toggle="dropdown" aria-expanded="false">
 								Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Insérer une
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer une
 										département</a></li>
 								<li><a class="dropdown-item" href="#">Insérer une
 										filière</a></li>
@@ -70,7 +70,7 @@
 			<div class="col-6">
 				<h3 class="text-center mt-1">Liste des départements</h3>
 				<table
-					class="table table-body-tertiary table-hover table-responsive my-4">
+					class="table table-body-tertiary table-hover overflow-y-auto mb-8">
 					<thead class="table-dark">
 						<tr>
 							<th scope="col">#</th>

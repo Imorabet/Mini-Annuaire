@@ -18,8 +18,10 @@
 </head>
 <body>
 	<%
-	boolean insertionSuccessful = (Boolean) request.getAttribute("insertionSuccessful");
+	Boolean insertionSuccessful = (Boolean) request.getAttribute("insertionSuccessful");
+	System.out.println(insertionSuccessful);
 	%>
+
 	<!-- navbar -->
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
@@ -52,9 +54,9 @@
 							data-bs-toggle="dropdown" aria-expanded="false">
 								Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="InsertDepartement.html">Insérer
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer
 										une département</a></li>
-								<li><a class="dropdown-item" href="#">Insérer une
+								<li><a class="dropdown-item" href="InsertFiliere.jsp">Insérer une
 										filière</a></li>
 								<li><a class="dropdown-item" href="#">Insérer un
 										étudiant</a></li>
@@ -67,51 +69,48 @@
 		</div>
 	</nav>
 	<!-- content -->
-	<div class="container mt-4 justify-content-center w-50">
-		<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  		<symbol id="check-circle-fill" viewBox="0 0 16 16">
-    		<path
-				d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-  		</symbol>
-  		<symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-    	<path
-				d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-  		</symbol>
-	</svg>
-		<%
-		if (insertionSuccessful) {
-		%>
-		<div class="alert alert-success d-flex flex-column align-items-center"
-			role="alert">
-			<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
-                <use xlink:href="#check-circle-fill" />
-            </svg>
-			<div class="col p-2">Insertion réussie</div>
-			<div class="col-auto p-2">
-				<a class="alert-link" href="InsertDepartement.html">Retour à la
-					page d'insertion</a>
+	<div class="content p-2">
+		<div class=" d-flex justify-content-center">
+			<%
+			if (insertionSuccessful != null && insertionSuccessful) {
+			%>
+			<div class="alert alert-success alert-dismissible fade show"
+				role="alert">
+				Insertion réussie
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
 			</div>
-		</div>
-		<%
-		} else {
-		%>
-		<div class="alert alert-danger d-flex flex-column align-items-center" role="alert">
-			<div class="col-auto">
-				<svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
-            <use xlink:href="#exclamation-triangle-fill" />
-        </svg>
+			<%
+			} else if (insertionSuccessful != null && !insertionSuccessful) {
+			%>
+			<div class="alert alert-danger alert-dismissible fade show"
+				role="alert">
+				Échec de l'insertion
+				<button type="button" class="btn-close" data-bs-dismiss="alert"
+					aria-label="Close"></button>
 			</div>
-			<div class="col p-2">Échec de l'insertion</div>
-			<div class="col-auto p-2">
-				<a class="alert-link" href="InsertDepartement.html">Retour à la
-					page d'insertion</a>
-			</div>
+			<%
+			}
+			%>
 		</div>
 
-		<%
-		}
-		%>
-
+		<div class="row justify-content-center w-100">
+			<div class="col-4">
+				<h3 class="text-center mt-3 mb-5">Insérer une département</h3>
+				<div class="card p-4 bg-body-tertiary" style="width: 100%;">
+					<form method="post" action="insertDepartement">
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Nom de
+								département</label> <input type="text" class="form-control"
+								name="nom_departement" required>
+						</div>
+						<div class="d-flex justify-content-end">
+							<button type="submit" class="btn btn-primary">Ajouter</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- footer -->

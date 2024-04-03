@@ -50,7 +50,7 @@
 							data-bs-toggle="dropdown" aria-expanded="false">
 								Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="InsertDepartement.html">Insérer une
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer une
 										département</a></li>
 								<li><a class="dropdown-item" href="#">Insérer une
 										filière</a></li>

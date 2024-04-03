@@ -50,7 +50,7 @@
 							data-bs-toggle="dropdown" aria-expanded="false">
 								Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="InsertDepartement.html">Insérer une
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer une
 										département</a></li>
 								<li><a class="dropdown-item" href="#">Insérer une
 										filière</a></li>
@@ -69,6 +69,7 @@
 		<div class="row justify-content-center w-100">
 			<div class="col-8">
 				<h3 class="text-center mt-1">Liste des étudiants</h3>
+				
 				<table
 					class="table table-body-tertiary table-hover table-responsive my-4">
 					<thead class="table-dark">

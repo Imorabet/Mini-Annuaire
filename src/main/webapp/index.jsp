@@ -73,7 +73,7 @@
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="InsertDepartement.html">Insérer une département</a></li>
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer une département</a></li>
 								<li><a class="dropdown-item" href="#">Insérer une filière</a></li>
 								<li><a class="dropdown-item" href="#">Insérer un étudiant</a></li>
 							</ul></li>

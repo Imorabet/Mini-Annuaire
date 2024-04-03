@@ -44,14 +44,13 @@ public class DepartementDao {
         return departments;
     }
 
-	public boolean insertDepartement(int id_d, String nom_d) {
+	public boolean insertDepartement( String nom_d) {
 		// TODO Auto-generated method stub
-		  String sql = "INSERT INTO departement (id, nom) VALUES (?, ?)";
+		  String sql = "INSERT INTO departement ( nom) VALUES ( ?)";
 
 	        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 	             PreparedStatement pstmt = connection.prepareStatement(sql)) {
-	        	 pstmt.setInt(1, id_d);
-	             pstmt.setString(2, nom_d);
+	             pstmt.setString(1, nom_d);
 	            int rowsInserted = pstmt.executeUpdate();
 	            return rowsInserted > 0;
 	        } catch (SQLException e) {

@@ -54,4 +54,23 @@ public class EtudiantDao {
 
         return etudiants;
     }
+
+	public boolean insertEtudiant(String nom, String prenom, int telephone, int idFiliere,int CNE) {
+		// TODO Auto-generated method stub
+		String sql = "INSERT INTO etudiant ( nom,prenom,telephone,filiere_id ,CNE) VALUES (?, ?,?,?,?)";
+
+        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        	pstmt.setString(1, nom);
+        	pstmt.setString(2, prenom);
+        	pstmt.setInt(3, telephone);
+        	 pstmt.setInt(4, idFiliere);
+        	 pstmt.setInt(5, CNE);
+            int rowsInserted = pstmt.executeUpdate();
+            return rowsInserted > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+	}
 }

@@ -2,6 +2,7 @@ package com.example.web.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,4 +57,21 @@ public class FiliereDao {
 
 	        return filieres;
 	    }
+
+		public boolean insertFiliere(int departementId, String nom) {
+			// TODO Auto-generated method stub
+			 String sql = "INSERT INTO filiere (departement_id, nom) VALUES (?, ?)";
+
+		        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+		             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+		        	 pstmt.setInt(1, departementId);
+		             pstmt.setString(2, nom);
+		            int rowsInserted = pstmt.executeUpdate();
+		            return rowsInserted > 0;
+		        } catch (SQLException e) {
+		            e.printStackTrace();
+		            return false;
+		        }
+		}
+		
 }

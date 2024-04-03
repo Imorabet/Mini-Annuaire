@@ -28,6 +28,18 @@
   	<description></description>
   	<servlet-class>com.example.web.controller.insertDepartement</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>insertFiliere</servlet-name>
+  	<display-name>insertFiliere</display-name>
+  	<description></description>
+  	<servlet-class>com.example.web.controller.insertFiliere</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertEtudiant</servlet-name>
+  	<display-name>insertEtudiant</display-name>
+  	<description></description>
+  	<servlet-class>com.example.web.controller.insertEtudiant</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>getAllDepartements</servlet-name>
   	<url-pattern>/getAllDepartements</url-pattern>
@@ -43,6 +55,14 @@
   <servlet-mapping>
   	<servlet-name>insertDepartement</servlet-name>
   	<url-pattern>/insertDepartement</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertFiliere</servlet-name>
+  	<url-pattern>/insertFiliere</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertEtudiant</servlet-name>
+  	<url-pattern>/insertEtudiant</url-pattern>
   </servlet-mapping>
   
 </web-app>
