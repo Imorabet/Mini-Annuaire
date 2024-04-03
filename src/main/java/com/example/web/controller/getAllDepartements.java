@@ -32,7 +32,6 @@ public class getAllDepartements extends HttpServlet {
 			throws ServletException, IOException {
 		DepartementDao departmentDao = new DepartementDao();
 		List<Departement> departments = departmentDao.getDepartements();
-		System.out.println("we are here");
 		// Set the departments as a request attribute
 		request.setAttribute("departments", departments);
 

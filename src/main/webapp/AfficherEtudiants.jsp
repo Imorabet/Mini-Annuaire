@@ -52,10 +52,10 @@
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer
 										une département</a></li>
-								<li><a class="dropdown-item" href="#">Insérer une
-										filière</a></li>
-								<li><a class="dropdown-item" href="#">Insérer un
-										étudiant</a></li>
+								<li><a class="dropdown-item" href="InsertFiliere.jsp">Insérer
+										une filière</a></li>
+								<li><a class="dropdown-item" href="InsertEtudiant.jsp">Insérer
+										un étudiant</a></li>
 							</ul></li>
 
 						<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>

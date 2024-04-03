@@ -96,7 +96,6 @@ public class EtudiantDao {
 	                etudiant.setFiliere(filiere);
 					etudiants.add(etudiant);
 					
-					System.out.print("draree hna fwest method");
 					
 				}
 			}

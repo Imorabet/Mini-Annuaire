@@ -57,25 +57,29 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="ms-auto">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.jsp">Acceuil</a></li><li
-							class="nav-item dropdown"><a
+                    <li class="nav-item"><a class="nav-link" href="index.jsp">Acceuil</a></li>
+						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> Listes </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item"
-									href="./getAllDepartements">Liste des départements</a></li>
-								<li><a class="dropdown-item" href="./getAllFilieres">Liste des
-										filières</a></li>
-								<li><a class="dropdown-item" href="./getAllEtudiants">Liste des
-										étudiants</a></li>
+								<li><a class="dropdown-item" href="./getAllDepartements">Liste
+										des départements</a></li>
+								<li><a class="dropdown-item" href="./getAllFilieres">Liste
+										des filières</a></li>
+								<li><a class="dropdown-item" href="./getAllEtudiants">Liste
+										des étudiants</a></li>
 							</ul></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> Administration </a>
+							data-bs-toggle="dropdown" aria-expanded="false">
+								Administration </a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer une département</a></li>
-								<li><a class="dropdown-item" href="#">Insérer une filière</a></li>
-								<li><a class="dropdown-item" href="#">Insérer un étudiant</a></li>
+								<li><a class="dropdown-item" href="InsertDepartement.jsp">Insérer
+										une département</a></li>
+								<li><a class="dropdown-item" href="InsertFiliere.jsp">Insérer
+										une filière</a></li>
+								<li><a class="dropdown-item" href="InsertEtudiant.jsp">Insérer
+										un étudiant</a></li>
 							</ul></li>
 					
 					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>

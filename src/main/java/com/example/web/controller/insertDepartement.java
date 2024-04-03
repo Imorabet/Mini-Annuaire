@@ -30,14 +30,12 @@ public class insertDepartement extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		boolean insertionSuccessful = false;
-        String nom_d = request.getParameter("nom_departement");
+		String nom_d = request.getParameter("nom_departement");
 
-       
-                DepartementDao departementDao = new DepartementDao();
-                insertionSuccessful = departementDao.insertDepartement(nom_d);
-        
+		DepartementDao departementDao = new DepartementDao();
+		insertionSuccessful = departementDao.insertDepartement(nom_d);
 
-        request.setAttribute("insertionSuccessful", insertionSuccessful);
-        request.getRequestDispatcher("InsertDepartement.jsp").forward(request, response);
-    }
+		request.setAttribute("insertionSuccessful", insertionSuccessful);
+		request.getRequestDispatcher("InsertDepartement.jsp").forward(request, response);
+	}
 }
