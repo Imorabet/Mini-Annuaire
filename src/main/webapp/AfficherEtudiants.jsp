@@ -93,9 +93,7 @@
 					</thead>
 					<tbody>
 						<%
-						// Retrieve filieres from request attribute
 						List<Etudiant> etudiants = (List<Etudiant>) request.getAttribute("etudiants");
-						// Iterate over filieres and display them
 						for (Etudiant etudiant : etudiants) {
 						%>
 						<tr>
