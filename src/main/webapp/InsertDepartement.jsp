@@ -70,11 +70,11 @@
 	</nav>
 	<!-- content -->
 	<div class="content p-2">
-		<div class=" d-flex justify-content-center">
+		<div class="d-flex justify-content-end">
 			<%
 			if (insertionSuccessful != null && insertionSuccessful) {
 			%>
-			<div class="alert alert-success alert-dismissible fade show"
+			<div class="alert alert-success alert-dismissible fade show h-25"
 				role="alert">
 				Insertion réussie
 				<button type="button" class="btn-close" data-bs-dismiss="alert"
@@ -83,7 +83,7 @@
 			<%
 			} else if (insertionSuccessful != null && !insertionSuccessful) {
 			%>
-			<div class="alert alert-danger alert-dismissible fade show"
+			<div class="alert alert-danger alert-dismissible fade show h-25"
 				role="alert">
 				Échec de l'insertion
 				<button type="button" class="btn-close" data-bs-dismiss="alert"

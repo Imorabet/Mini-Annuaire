@@ -46,6 +46,18 @@
   	<description></description>
   	<servlet-class>com.example.web.controller.rechercheEtudiant</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>rechercheDepartement</servlet-name>
+  	<display-name>rechercheDepartement</display-name>
+  	<description></description>
+  	<servlet-class>com.example.web.controller.rechercheDepartement</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>rechercheFiliere</servlet-name>
+  	<display-name>rechercheFiliere</display-name>
+  	<description></description>
+  	<servlet-class>com.example.web.controller.rechercheFiliere</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>getAllDepartements</servlet-name>
   	<url-pattern>/getAllDepartements</url-pattern>
@@ -73,6 +85,14 @@
   <servlet-mapping>
   	<servlet-name>rechercheEtudiant</servlet-name>
   	<url-pattern>/rechercheEtudiant</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rechercheDepartement</servlet-name>
+  	<url-pattern>/rechercheDepartement</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>rechercheFiliere</servlet-name>
+  	<url-pattern>/rechercheFiliere</url-pattern>
   </servlet-mapping>
   
 </web-app>

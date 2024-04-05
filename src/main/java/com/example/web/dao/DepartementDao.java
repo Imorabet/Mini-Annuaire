@@ -58,4 +58,32 @@ public class DepartementDao {
 	            return false;
 	        }
 	}
+
+	public List<Departement> rechercheDepartement(String dpName) {
+		// TODO Auto-generated method stub
+		 List<Departement> departements = new ArrayList<>();
+
+	        String sql = "SELECT * FROM departement WHERE nom LIKE ?";
+	        
+	        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+	             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+	            
+	            // Set the search parameter
+	            pstmt.setString(1, "%" + dpName + "%");
+
+	            // Execute the query
+	            try (ResultSet resultSet = pstmt.executeQuery()) {
+	                while (resultSet.next()) {
+	                    Departement departement = new Departement();
+	                    departement.setId(resultSet.getInt("id"));
+	                    departement.setNom(resultSet.getString("nom"));
+	                    departements.add(departement);
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+
+	        return departements;
+	}
 }

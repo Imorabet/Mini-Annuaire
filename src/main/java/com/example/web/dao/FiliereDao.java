@@ -73,5 +73,43 @@ public class FiliereDao {
 		            return false;
 		        }
 		}
+
+		public List<Filiere> rechercheFiliere(String filName) {
+			// TODO Auto-generated method stub
+			List<Filiere> filieres = new ArrayList<>();
+
+	        String sql = "SELECT f.*, d.nom AS departement_nom " +
+	                     "FROM filiere f " +
+	                     "INNER JOIN departement d ON f.departement_id = d.id " +
+	                     "WHERE f.nom LIKE ?";
+	        
+	        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+	             PreparedStatement pstmt = connection.prepareStatement(sql)) {
+	            
+	            // Set the search parameter
+	            pstmt.setString(1, "%" + filName + "%");
+
+	            // Execute the query
+	            try (ResultSet resultSet = pstmt.executeQuery()) {
+	                while (resultSet.next()) {
+	                    Filiere filiere = new Filiere();
+	                    filiere.setId(resultSet.getInt("f.id"));
+	                    filiere.setNom(resultSet.getString("f.nom"));
+	                    
+	                    // Get the department name associated with the filiere
+	                    String departementNom = resultSet.getString("departement_nom");
+	                    Departement departement = new Departement();
+	                    departement.setNom(departementNom);
+	                    filiere.setDepartement(departement);
+	                    
+	                    filieres.add(filiere);
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+
+	        return filieres;
+		}
 		
 }
