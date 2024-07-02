@@ -68,11 +68,13 @@
 	<div class="content p-2">
 		<div class="row justify-content-center w-100">
 			<div class="col-8">
-				<div class="d-flex justify-content-center align-items-center position-relative">
+				<div
+					class="d-flex justify-content-center align-items-center position-relative">
 					<div class="d-flex align-items-center">
 						<h3 class="text-center mt-1">Liste des étudiants</h3>
 					</div>
-					<a class="btn btn-light top-0 end-0 position-absolute" href="RechercheEtudiant.html"> <svg
+					<a class="btn btn-light top-0 end-0 position-absolute"
+						href="RechercheEtudiant.html"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path
@@ -94,7 +96,16 @@
 					<tbody>
 						<%
 						List<Etudiant> etudiants = (List<Etudiant>) request.getAttribute("etudiants");
-						for (Etudiant etudiant : etudiants) {
+
+						if (etudiants == null || etudiants.isEmpty()) {
+						%>
+						<tr>
+							<td colspan="5" class="text-center">Aucun étudiant
+								trouvé</td>
+						</tr>
+						<%
+						} else {
+							for (Etudiant etudiant : etudiants){
 						%>
 						<tr>
 							<th scope="row"><%=etudiant.getCNE()%></th>
@@ -104,6 +115,7 @@
 							<td><%=etudiant.getFiliere().getDepartement().getNom()%></td>
 						</tr>
 						<%
+						}
 						}
 						%>
 

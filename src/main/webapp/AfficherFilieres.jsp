@@ -68,11 +68,13 @@
 	<div class="content p-2">
 		<div class="row justify-content-center w-100">
 			<div class="col-6">
-				<div class="d-flex justify-content-center align-items-center position-relative">
+				<div
+					class="d-flex justify-content-center align-items-center position-relative">
 					<div class="d-flex align-items-center">
 						<h3 class="text-center mt-1">Liste des filières</h3>
 					</div>
-					<a class="btn btn-light top-0 end-0 position-absolute" href="RechercheFiliere.html"> <svg
+					<a class="btn btn-light top-0 end-0 position-absolute"
+						href="RechercheFiliere.html"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path
@@ -91,10 +93,17 @@
 					</thead>
 					<tbody>
 						<%
-						// Retrieve filieres from request attribute
 						List<Filiere> filieres = (List<Filiere>) request.getAttribute("filieres");
-						// Iterate over filieres and display them
-						for (Filiere filiere : filieres) {
+
+						if (filieres == null || filieres.isEmpty()) {
+						%>
+						<tr>
+							<td colspan="3" class="text-center">Aucune filières
+								trouvé</td>
+						</tr>
+						<%
+						} else {
+							for (Filiere filiere : filieres) {
 						%>
 						<tr>
 							<th scope="row"><%=filiere.getId()%></th>
@@ -102,6 +111,7 @@
 							<td><%=filiere.getDepartement().getNom()%></td>
 						</tr>
 						<%
+						}
 						}
 						%>
 

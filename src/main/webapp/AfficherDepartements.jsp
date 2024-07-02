@@ -68,11 +68,13 @@
 	<div class="content p-2">
 		<div class="row justify-content-center w-100">
 			<div class="col-6">
-				<div class="d-flex justify-content-center align-items-center position-relative">
+				<div
+					class="d-flex justify-content-center align-items-center position-relative">
 					<div class="d-flex align-items-center">
 						<h3 class="text-center mt-1">Liste des départements</h3>
 					</div>
-					<a class="btn btn-light top-0 end-0 position-absolute" href="RechercheDepartement.html"> <svg
+					<a class="btn btn-light top-0 end-0 position-absolute"
+						href="RechercheDepartement.html"> <svg
 							xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 							fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path
@@ -81,7 +83,7 @@
 					</a>
 				</div>
 				<table
-					class="table table-body-tertiary table-hover overflow-y-auto mb-8">
+					class="table table-body-tertiary table-hover overflow-y-auto mb-8 my-4">
 					<thead class="table-dark">
 						<tr>
 							<th scope="col">#</th>
@@ -90,18 +92,27 @@
 					</thead>
 					<tbody>
 						<%
-						// Retrieve departments from request attribute
-						List<Departement> departments = (List<Departement>) request.getAttribute("departments");
-						// Iterate over departments and display them
-						for (Departement department : departments) {
+						List<Departement> departements = (List<Departement>) request.getAttribute("departments");
+
+						if (departements == null || departements.isEmpty()) {
 						%>
 						<tr>
-							<th scope="row"><%=department.getId()%></th>
-							<td><%=department.getNom()%></td>
+							<td colspan="2" class="text-center">Aucune département
+								trouvé</td>
+						</tr>
+						<%
+						} else {
+						for (Departement departement : departements) {
+						%>
+						<tr>
+							<th scope="row"><%=departement.getId()%></th>
+							<td><%=departement.getNom()%></td>
 						</tr>
 						<%
 						}
+						}
 						%>
+
 					</tbody>
 				</table>
 			</div>
